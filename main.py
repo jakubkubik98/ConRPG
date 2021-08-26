@@ -3,10 +3,34 @@
 # version: a1.0
 # ---------------------------------
 import os.path as path
+import charactersheet
+import time
 from colorama import Fore
+from colorama import init
+
+init(autoreset=True)
 
 FILES = ["charactersheet.py", "enemies.py", "race.py"]
-i = 0
+
+
+def menu():
+    makechoice = 0
+    print("\n" * 10)
+    print("""1: Find enemy!
+2: Character sheet
+e: Exit""")
+    while makechoice != "e":
+        if makechoice == "1":
+            # Find Enemy function
+            break
+        if makechoice == "2":
+            charactersheet.printsheet()
+            menu()
+        if makechoice == "e":
+            break  # Exit
+        makechoice = input()
+
+
 print("DEBUG - File integrity:")
 for i in range(len(FILES)):
     checkfile = path.isfile(FILES[i])
@@ -15,3 +39,5 @@ for i in range(len(FILES)):
     else:
         print(Fore.GREEN + f"{FILES[i]:20s}: OK")
 
+time.sleep(3)
+menu()
