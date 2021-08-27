@@ -1,5 +1,9 @@
-attribute = {'LVL': 0, 'EXP': 0, 'HP': 0, 'STR': 0, 'DEX': 0, 'CON': 0, 'AC': 10, 'AB': 0}
+attribute = {'LVL': 1, 'NXTLVL': 0, 'EXP': 0, 'LVLUP': 0, 'HP': 0, 'STR': 0, 'DEX': 0,
+             'CON': 0, 'AC': 10, 'AB': 0}
 whoami = {'Name': "", 'Race': ""}
+race = ['Human', 'Elf', 'Dwarf']
+
+
 # equipment = {"Head": "", "Chest": "", 'Gloves': "", 'Boots': "", 'Weapon': ""}
 
 
@@ -15,4 +19,5 @@ def printsheet():
     #     print(f"{atttype:6} : {equipment[atttype]} ")
 
 
-printsheet()
+def createcharacter():
+    print()

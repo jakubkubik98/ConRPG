@@ -10,12 +10,14 @@ from colorama import init
 
 init(autoreset=True)
 
-FILES = ["charactersheet.py", "enemies.py", "race.py"]
+FILES = ["charactersheet.py", "enemies.py", "race.py, conversations.py"]
 
 
 def menu():
     makechoice = 0
     print("\n" * 10)
+    if charactersheet.whoami['Name'] == "":
+        charactersheet.createcharacter()
     print("""1: Find enemy!
 2: Character sheet
 e: Exit""")
@@ -25,6 +27,7 @@ e: Exit""")
             break
         if makechoice == "2":
             charactersheet.printsheet()
+            print("")
             menu()
         if makechoice == "e":
             break  # Exit
